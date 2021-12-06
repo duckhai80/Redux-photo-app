@@ -1,0 +1,27 @@
+import Banner from "components/Banner";
+import Images from "constants/images";
+import React from "react";
+// import { Link } from "react-router-dom";
+import { Container } from "reactstrap";
+import { BrowserRouter, Route, Switch, Redirect, Link } from "react-router-dom";
+import NotFound from "components/NotFound";
+import { useSelector } from "react-redux";
+
+const AddEdit = React.lazy(() => import("../AddEdit"));
+
+MainPage.propTypes = {};
+
+function MainPage(props) {
+  const photo = useSelector((state) => state.photo);
+  return (
+    <div className="photo-main">
+      <Banner title="Your awesome photos 🎉" backgroundUrl={Images.PINK_BG} />
+
+      <Container className="text-center">
+        <Link to="/photos/add">Add new photo</Link>
+      </Container>
+    </div>
+  );
+}
+
+export default MainPage;

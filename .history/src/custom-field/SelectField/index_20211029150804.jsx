@@ -1,0 +1,36 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { FormGroup, Label } from "reactstrap";
+import Select from "react-select";
+
+SelectField.propTypes = {
+  field: PropTypes.object.isRequired,
+  form: PropTypes.object.isRequired,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  options: PropTypes.array,
+  disabled: PropTypes.bool,
+};
+
+SelectField.defaultProps = {
+  label: "",
+  placeholder: "",
+  options: [],
+  disabled: false,
+};
+
+function SelectField(props) {
+  return (
+    <FormGroup>
+      <Label for="categoryId">Category</Label>
+      <Select
+        id="categoryId"
+        name="categoryId"
+        placeholder="What's your photo category?"
+        options={PHOTO_CATEGORY_OPTIONS}
+      />
+    </FormGroup>
+  );
+}
+
+export default SelectField;
