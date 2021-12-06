@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import "./Header.scss";
@@ -15,11 +14,10 @@ function Header() {
             <Col xs="auto">
               <a
                 className="header__link header__title"
-                href="https://youtube.com/easyfrontend"
-                target="_blank"
+                href="#"
                 rel="noopener noreferrer"
               >
-                Easy Frontend
+                Photo App
               </a>
             </Col>
 
@@ -27,10 +25,10 @@ function Header() {
               <NavLink
                 exact
                 className="header__link"
-                to="/photos"
+                to="/sign-in"
                 activeClassName="header__link--active"
               >
-                Redux Project
+                Sign In
               </NavLink>
             </Col>
           </Row>
@@ -39,3 +37,5 @@ function Header() {
     </div>
   );
 }
+
+export default Header;
